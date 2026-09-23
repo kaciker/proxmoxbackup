@@ -1,0 +1,10 @@
+services:
+  backup-dashboard:
+    build: .
+    container_name: backup-dashboard
+    restart: unless-stopped
+    ports:
+      - "8788:8788"
+    volumes:
+      - ./config:/etc/backup-dashboard:ro
+      - ./data:/var/lib/backup-dashboard:rw

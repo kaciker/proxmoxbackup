@@ -1,0 +1,23 @@
+[Unit]
+Description=Proxmox backup dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Environment=PVE_URL=https://192.168.31.5:8006/api2/json
+Environment=PVE_NODE=proxmoxhx90
+Environment=TOKEN_FILE=/etc/backup-dashboard/token.json
+Environment=PORT=8788
+ExecStart=/usr/bin/python3 /opt/backup-dashboard/app.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=/etc/backup-dashboard
+
+[Install]
+WantedBy=multi-user.target

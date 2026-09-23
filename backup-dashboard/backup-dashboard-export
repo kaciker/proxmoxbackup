@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+printf '{"ssd-backup":'
+pvesh get /nodes/proxmoxhx90/storage/ssd-backup/content --content backup --output-format json
+printf ',"USB5Tb":'
+pvesh get /nodes/proxmoxhx90/storage/USB5Tb/content --content backup --output-format json
+printf ',"usb-weekly":'
+pvesh get /nodes/proxmoxhx90/storage/usb-weekly/content --content backup --output-format json
+printf ',"usb-monthly":'
+pvesh get /nodes/proxmoxhx90/storage/usb-monthly/content --content backup --output-format json
+printf ',"usb-offline":'
+pvesh get /nodes/proxmoxhx90/storage/usb-offline/content --content backup --output-format json
+printf '}\n'

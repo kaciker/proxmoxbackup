@@ -1,0 +1,18 @@
+# Runtime state and credentials
+backup-dashboard/config/
+backup-dashboard/data/
+*.token
+*.secret
+*.key
+*.pem
+.env
+
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+
+# Local project notes and generated orchestration files
+.cptr/
+AGENTS.md
+MEMORY.md
+tools.yaml
